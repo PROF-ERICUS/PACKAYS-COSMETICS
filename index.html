@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PACKAYS COSMETICS - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">PACKAYS COSMETICS</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Video Background Section -->
+        <section class="hero">
+            <video autoplay muted loop class="background-video">
+                <source src="video/v1.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <div class="hero-content">
+                <h1>Welcome to Cosmetics Hub</h1>
+                <p>Your go-to destination for premium beauty and skincare products.</p>
+                <a href="shop.html" class="btn">Shop Now</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 packays Cosmetics. All rights reserved.</p>
+    </footer>
+
+    <!-- Chat Box -->
+    <div class="chat-box">
+        <div class="chat-header">
+            <span>Need Help? Chat with us!</span>
+            <button class="close-chat">×</button>
+        </div>
+        <div class="chat-body">
+            <p>Hi! How can we assist you today?</p>
+        </div>
+        <div class="chat-footer">
+            <input type="text" placeholder="Type your message..." id="chat-input">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <button class="chat-toggle-btn">💬</button>
+
+    <!-- Script for Chat Box -->
+    <script>
+        const chatBox = document.querySelector('.chat-box');
+        const chatToggleBtn = document.querySelector('.chat-toggle-btn');
+        const closeChatBtn = document.querySelector('.close-chat');
+
+        chatToggleBtn.addEventListener('click', () => {
+            chatBox.style.display = 'block';
+            chatToggleBtn.style.display = 'none';
+        });
+
+        closeChatBtn.addEventListener('click', () => {
+            chatBox.style.display = 'none';
+            chatToggleBtn.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

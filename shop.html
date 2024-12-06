@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PACKAYS COSMETICS - Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">PACKAYS COSMETICS</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="shop-grid">
+            <div class="shop-item">
+                <img src="images/lipstick.jpeg" alt="Lipstick">
+                <h3>Luxury Lipstick</h3>
+                <p>Price: ₵120</p>
+                <button class="btn" onclick="addToCart('Luxury Lipstick', 120)">Buy Now</button>
+            </div>
+            <div class="shop-item">
+                <img src="images/Mac Studio Fix Powder Plus Foundation Nw45 15 g 0_52 oz, Multicolor.jpeg" alt="Foundation">
+                <h3>Smooth Foundation</h3>
+                <p>Price: ₵150</p>
+                <button class="btn" onclick="addToCart('Smooth Foundation', 150)">Buy Now</button>
+            </div>
+            <div class="shop-item">
+                <img src="images/Johnson's 24 Hour Moisture Soft Cream 100 Ml Beauty كريم جونسون مرطب ناعم🎖️.jpeg" alt="Cream">
+                <h3>Hydrating Cream</h3>
+                <p>Price: ₵180</p>
+                <button class="btn" onclick="addToCart('Hydrating Cream', 180)">Buy Now</button>
+            </div>
+            <div class="shop-item">
+                <img src="images/wideo produktowe.jpg" alt="Mascara">
+                <h3>Volumizing Mascara</h3>
+                <p>Price: ₵100</p>
+                <button class="btn" onclick="addToCart('Volumizing Mascara', 100)">Buy Now</button>
+            </div>
+            <div class="shop-item">
+                <img src="images/Makeup Revolution Forever Flawless Regal Romance Shadow Palette _ LOOKFANTASTIC (1).jpeg" alt="Eyeshadow">
+                <h3>Luxury Eyeshadow Palette</h3>
+                <p>Price: ₵200</p>
+                <button class="btn" onclick="addToCart('Luxury Eyeshadow Palette', 200)">Buy Now</button>
+            </div>
+            <div class="shop-item">
+                <img src="images/Q Russ Premium Serum Reduces Blemishes Freckles Dark Spots Wrinkles 30 Ml.jpeg" alt="Serum">
+                <h3>Revitalizing Serum</h3>
+                <p>Price: ₵250</p>
+                <button class="btn" onclick="addToCart('Revitalizing Serum', 250)">Buy Now</button>
+            </div>
+        </section>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="order-list"></ul>
+            <div class="total-price">
+                <strong>Total Price: ₵<span id="total-price">0</span></strong>
+            </div>
+        </div>
+
+        <div class="order-section">
+            <h2>Place Your Order</h2>
+            <form id="order-form" onsubmit="placeOrder(event)">
+                <label for="customer-name">Name:</label>
+                <input type="text" id="customer-name" required>
+
+                <label for="customer-email">Email:</label>
+                <input type="email" id="customer-email" required>
+
+                <label for="customer-address">Address:</label>
+                <input type="text" id="customer-address" required>
+
+                <label for="customer-phone">Phone Number:</label>
+                <input type="tel" id="customer-phone" required pattern="^\d{10}$" placeholder="10-digit phone number">
+
+                <button type="submit">Submit Order</button>
+                <div id="order-confirmation" style="display:none; color: green;">Order placed successfully!</div>
+            </form>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Cosmetics Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function addToCart(itemName, itemPrice) {
+            cart.push({ name: itemName, price: itemPrice });
+            updateOrderSummary();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            const orderList = document.getElementById('order-list');
+            orderList.innerHTML = '';
+            let totalPrice = 0;
+
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - ₵${item.price} `;
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.onclick = () => removeFromCart(index);
+                li.appendChild(removeButton);
+                orderList.appendChild(li);
+                totalPrice += item.price;
+            });
+
+            document.getElementById('total-price').textContent = totalPrice;
+        }
+
+        function placeOrder(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('customer-name').value;
+            const email = document.getElementById('customer-email').value;
+            const address = document.getElementById('customer-address').value;
+            const phone = document.getElementById('customer-phone').value;
+
+            // Validate phone number format
+            if (!/^\d{10}$/.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return;
+            }
+
+            const confirmationMessage = document.getElementById('order-confirmation');
+            confirmationMessage.style.display = 'block';
+            confirmationMessage.textContent = `Order placed successfully!\nName: ${name}\nEmail: ${email}\nAddress: ${address}\nPhone: ${phone}`;
+
+            // Clear cart after order
+            cart = [];
+            updateOrderSummary();
+            document.getElementById('order-form').reset();
+        }
+    </script>
+</body>
+</html>

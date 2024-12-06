@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PACKAYS COSMETICS - About Us</title>
+    <style>
+    
+        body {
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #faf9f9;
+        }
+
+        header {
+            background-color: #f8b1c2;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        nav ul li a.active,
+        nav ul li a:hover {
+            color: #333;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        /* Main Layout */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        /* About Section */
+        .about-section {
+            flex: 2;
+            max-width: 600px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #f8b1c2;
+        }
+
+        .about-section p {
+            margin: 10px 0;
+        }
+
+        .about-section h3 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #f8b1c2;
+        }
+
+        .about-section ul {
+            list-style-type: disc;
+            margin: 10px 0;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .about-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* FAQ Section */
+        .faq {
+            flex: 1; 
+            max-width: 300px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .faq h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #f8b1c2;
+        }
+
+        .faq-item {
+            margin: 10px 0;
+        }
+
+        .faq-question {
+            font-weight: bold;
+        }
+
+        .faq-answer {
+            margin-left: 10px;
+            margin-top: 5px;
+            color: #555;
+        }
+
+        /* Call to Action Button */
+        .cta-button {
+            display: inline-block;
+            background-color: #f8b1c2;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #d49ca5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .about-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-section h3 {
+                font-size: 1.3rem;
+            }
+
+            .about-section ul {
+                padding-left: 15px; 
+            }
+
+            main {
+                flex-direction: column; 
+                align-items: center; 
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .about-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .about-image {
+                max-height: 250px; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .about-section h3 {
+                font-size: 1.1rem;
+            }
+
+            .about-image {
+                max-height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">PACKAYS COSMETICS</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="about-section">
+            <h2>About Cosmetics Hub</h2>
+            <p>Cosmetics Hub is dedicated to providing high-quality beauty products that enhance your natural beauty. We believe in empowering individuals to feel confident and radiant.</p>
+            <img src="images/Cosmetics Store.jpeg" alt="Packays Cosmetics Hub" class="about-image">
+            <h3>Our Values</h3>
+            <ul>
+                <li>Quality: We source the finest ingredients for our products.</li>
+                <li>Inclusivity: Our products are designed for all skin types.</li>
+                <li>Sustainability: We are committed to eco-friendly practices.</li>
+            </ul>
+            <h3>Meet Our Team</h3>
+            <p>Our passionate team of beauty enthusiasts is here to help you find the perfect products tailored to your needs.</p>
+            <p>Join us on our journey to beauty by exploring our <a href="shop.html">Shop</a> today!</p>
+            <a href="shop.html" class="cta-button">Explore Our Shop</a> 
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-item">
+                <div class="faq-question">What types of products do you offer?</div>
+                <div class="faq-answer">We offer a wide range of cosmetics, including skincare, makeup, and beauty tools.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you test on animals?</div>
+                <div class="faq-answer">No, we are proud to be cruelty-free and do not test on animals.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How can I contact customer support?</div>
+                <div class="faq-answer">You can contact us through our contact page or via email at support@Packayscosmetics.com.</div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Packays Cosmetics. All rights reserved.</p>
+    </footer>
+</body>
+</html>
